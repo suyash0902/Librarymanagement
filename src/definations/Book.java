@@ -7,13 +7,15 @@
 
 package definations;
 
+import java.util.Objects;
+
 public class Book {
-    // Creating member variable
+    //Creating member variable
     private String bookName;
     private String authorName;
     private String isbnNumber;
 
-    //Setter Method & Getter Method
+    //Setter Method & Getter Method()
     public String getBookName() {
         return bookName;
     }
@@ -33,12 +35,37 @@ public class Book {
         this.isbnNumber = isbnNumber;
     }
 
-    //parameterized constructor
+    //Parameterized constructor()
     public Book(String bookName, String authorName, String isbnNumber) {
         this.bookName = bookName;
         this.authorName = authorName;
         this.isbnNumber = isbnNumber;
     }
 
+    //To-string() method
+    @Override
+    public String toString() {
+        return "Book{" +
+                "bookName='" + bookName + '\'' +
+                ", authorName='" + authorName + '\'' +
+                ", isbnNumber='" + isbnNumber + '\'' +
+                '}';
+    }
+
+    //equals() and the hashCode() method
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return Objects.equals(getBookName(), book.getBookName()) &&
+                Objects.equals(getAuthorName(), book.getAuthorName()) &&
+                Objects.equals(getIsbnNumber(), book.getIsbnNumber());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getBookName(), getAuthorName(), getIsbnNumber());
+    }
 }
 
