@@ -66,7 +66,7 @@ public class Student {
     public void setUniversityRollNumber(long universityRollNumber) {
         this.universityRollNumber = universityRollNumber;
     }
-    public Student(String firstName, String middleName, String lastName, long universityRollNumber, int noOfBooksIssued, Book[] libraryBookIssued){
+    public Student(){
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
