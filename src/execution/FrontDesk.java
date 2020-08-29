@@ -21,6 +21,22 @@ public class FrontDesk {
                 "2. Return a previously issues book for me.\n" +
                 "3. Show me all my issues books.\n" +
                 "4. Exit.\n");
+        int input;
+        do {
+            System.out.println("Enter the option");
+            input = scanner.nextInt();
+            scanner.nextLine();
+            switch (input){
+                case 1:
+                    System.out.println("Enter Book Name : ");
+                    String bookName = scanner.nextLine();
+                    System.out.println("Enter Author Name : ");
+                    String authorName = scanner.nextLine();
+                    System.out.println("Enter ISBN Number of Book");
+                    String isbnNumber = scanner.nextLine();
+
+            }
+        }
 
     }
 }
