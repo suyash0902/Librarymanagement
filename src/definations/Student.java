@@ -114,5 +114,12 @@ public class Student {
     public void returnBook (String bookName) {
         System.out.println("ThankYou for returning " + bookName + ".");
     }
+    //this method provides you the list of books in the library.
+    public void showAllBooksOfLibrary (){
+        libraryBookIssued = new Book[9];
+        for (int index = 0; index < 9; index++) {
+            System.out.println("Book " + (index+1));
+        }
+    }
 }
 
