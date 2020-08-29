@@ -7,6 +7,7 @@
 
 package execution;
 
+import definations.Book;
 import definations.Student;
 
 import java.util.Scanner;
@@ -26,7 +27,7 @@ public class FrontDesk {
             System.out.println("Enter the option");
             input = scanner.nextInt();
             scanner.nextLine();
-            switch (input){
+            switch (input) {
                 case 1:
                     System.out.println("Enter Book Name : ");
                     String bookName = scanner.nextLine();
@@ -34,9 +35,21 @@ public class FrontDesk {
                     String authorName = scanner.nextLine();
                     System.out.println("Enter ISBN Number of Book");
                     String isbnNumber = scanner.nextLine();
-
+                    Book book = new Book(bookName, authorName, isbnNumber);
+                    student.issueBook(book);
+                    break;
+                case 2:
+                    System.out.println("Enter name of book which you want to return");
+                    String returnBookName = scanner.nextLine();
+                    student.returnBook(returnBookName);
+                    break;
+                case 3:
+                    student.showAllBooksOfLibrary();
+                    break;
+                default:
+                    System.out.println("Invalid Option Entered, Please Re-Enter : ");
             }
-        }
+        }while (input != 4);
 
     }
 }
