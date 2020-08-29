@@ -18,6 +18,15 @@ public class Student {
     private int noOfBooksIssued;
     private Book[] libraryBookIssued;
 
+    public Student() {
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.universityRollNumber = universityRollNumber;
+        this.noOfBooksIssued = noOfBooksIssued;
+        this.libraryBookIssued = libraryBookIssued;
+    }
+
     //setter & getter methods
     public String getFirstName() {
         return firstName;
@@ -66,14 +75,6 @@ public class Student {
     public void setUniversityRollNumber(long universityRollNumber) {
         this.universityRollNumber = universityRollNumber;
     }
-    public Student(){
-        this.firstName = firstName;
-        this.middleName = middleName;
-        this.lastName = lastName;
-        this.universityRollNumber = universityRollNumber;
-        this.noOfBooksIssued = noOfBooksIssued;
-        this.libraryBookIssued = libraryBookIssued;
-    }
 
     @Override
     public String toString() {
@@ -106,19 +107,22 @@ public class Student {
         result = 31 * result + Arrays.hashCode(getLibraryBookIssued());
         return result;
     }
+
     //this method will allow the student to issue book from library.
-    public void issueBook (Book book) {
-        System.out.println(book.getBookName() + " book is issued.");
+    public void issueBook(Book book) {
+        System.out.println("Thank You for issuing \"" + book.getBookName() + "\".");
     }
+
     //this method will allow the student to return book to library.
-    public void returnBook (String bookName) {
-        System.out.println("ThankYou for returning " + bookName + ".");
+    public void returnBook(String bookName) {
+        System.out.println("Thank You for returning \"" + bookName + "\".");
     }
+
     //this method provides you the list of books in the library.
-    public void showAllBooksOfLibrary (){
+    public void showAllBooksOfLibrary() {
         libraryBookIssued = new Book[9];
         for (int index = 0; index < 9; index++) {
-            System.out.println("Book " + (index+1));
+            System.out.println("Book " + (index + 1));
         }
     }
 }
