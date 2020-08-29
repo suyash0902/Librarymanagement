@@ -106,9 +106,13 @@ public class Student {
         result = 31 * result + Arrays.hashCode(getLibraryBookIssued());
         return result;
     }
-    //this method will allow to issue book from library.
+    //this method will allow the student to issue book from library.
     public void issueBook (Book book) {
         System.out.println(book.getBookName() + " book is issued.");
+    }
+    //this method will allow the student to return book to library.
+    public void returnBook (String bookName) {
+        System.out.println("ThankYou for returning " + bookName + ".");
     }
 }
 
