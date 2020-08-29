@@ -9,6 +9,8 @@ package definations;
 
 public class Library {
     private Book[] availableLibraryBooks;
-
+    public Library(Book[] availableLibraryBooks){
+        this.availableLibraryBooks = availableLibraryBooks;
+    }
 }
 
