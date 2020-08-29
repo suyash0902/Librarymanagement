@@ -14,6 +14,19 @@ import java.util.Scanner;
 
 public class FrontDesk {
     public static void main(String[] args) {
+        Scanner firstName = new Scanner(System.in);
+        System.out.println("Please enter the Following Detail's ");
+        System.out.print("First Name : ");
+        String fName = firstName.nextLine();
+        Scanner middleName = new Scanner(System.in);
+        System.out.print("Middle Name : ");
+        String mName = middleName.nextLine();
+        Scanner lastName = new Scanner(System.in);
+        System.out.print("Last Name : ");
+        String lName = lastName.nextLine();
+        Scanner universityRollNumber = new Scanner(System.in);
+        System.out.print("University Roll Number : ");
+        long univRoll = universityRollNumber.nextLong();
         Student student = new Student();
         Scanner scanner = new Scanner(System.in);
         System.out.println("-=-=--=-=-\"Welcome To The Front Desk\"-=-=--=-=-\n" +
@@ -24,22 +37,22 @@ public class FrontDesk {
                 "4. Exit.\n");
         int input;
         do {
-            System.out.println("Enter the option");
+            System.out.print("Enter the option : ");
             input = scanner.nextInt();
             scanner.nextLine();
             switch (input) {
                 case 1:
-                    System.out.println("Enter Book Name : ");
+                    System.out.print("Enter Book Name : ");
                     String bookName = scanner.nextLine();
-                    System.out.println("Enter Author Name : ");
+                    System.out.print("Enter Author Name : ");
                     String authorName = scanner.nextLine();
-                    System.out.println("Enter ISBN Number of Book");
+                    System.out.print("Enter ISBN Number of Book : ");
                     String isbnNumber = scanner.nextLine();
                     Book book = new Book(bookName, authorName, isbnNumber);
                     student.issueBook(book);
                     break;
                 case 2:
-                    System.out.println("Enter name of book which you want to return");
+                    System.out.print("Enter name of book which you want to return : ");
                     String returnBookName = scanner.nextLine();
                     student.returnBook(returnBookName);
                     break;
@@ -47,9 +60,9 @@ public class FrontDesk {
                     student.showAllBooksOfLibrary();
                     break;
                 default:
-                    System.out.println("Invalid Option Entered, Please Re-Enter : ");
+                    System.out.println("ThankYou, Have a nice day.");
             }
-        }while (input != 4);
+        } while (input != 4);
 
     }
 }
